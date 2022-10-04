@@ -11,17 +11,24 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="primary">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding" color="primary">
+  <div class="background">
+    <div class="bank-information ion-text-center">
+      <img class="qrcode" src="../../assets/qrcode.png" alt="">
+      <span>Banco <strong>000 - Nu Pagamentos S.A</strong></span>
+      <span>Agência <strong>0000</strong></span>
+      <span>Conta <strong>0000000-0</strong></span>
+    </div>
+    <ion-list lines="full">
+      <ion-item *ngFor="let item of items" detail>
+        <ion-icon slot="start" [name]="item.icon"></ion-icon>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer"
-        href="https://ionicframework.com/docs/components">UI Components</a></p>
+        <ion-label>{{item.text}}</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-button class="logout" color="light" expand="block" fill="outline">
+      Sair da conta
+    </ion-button>
   </div>
 </ion-content>
 
